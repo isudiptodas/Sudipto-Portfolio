@@ -1,0 +1,35 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+@import "tailwindcss";
+
+@font-face{
+    font-family: 'HighlandGothic';
+    src: url('/fonts/HighlandGothicFLF.ttf') format('truetype');
+    font-style: normal;
+}
+
+@font-face{
+    font-family: 'MicroExtend';
+    src: url('/fonts/MicroExtendFLF.ttf') format('truetype');
+    font-style: normal;
+}
+
+@font-face{
+    font-family: 'Monterey';
+    src: url('/fonts/MontereyFLF.ttf') format('truetype');
+    font-style: normal;
+}
+
+@theme{
+    --font-highlandGothic: 'HighlandGothic', 'sans-serif';
+    --font-microExtend: 'MicroExtend', 'sans-serif';
+    --font-monterey: 'Monterey', 'sans-serif';
+    --font-montserrat: "Montserrat", 'serif';
+}
+
+html, .sidebar, .content{
+    scrollbar-width: none; 
+  }
+  
+  ::-webkit-scrollbar {
+    display: none;
+  }
