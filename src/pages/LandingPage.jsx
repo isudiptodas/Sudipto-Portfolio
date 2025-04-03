@@ -162,7 +162,7 @@ function LandingPage() {
             initial={{ opacity: 0, y: 40 }}
             animate={{ opacity: 100, y: 0 }}
             transition={{ delay: 2.6, duration: 1 }}
-          >Web Technology : HTML, CSS, JavaScript, TailwindCSS, ReactJs, TypeScript, NodeJs, Express</motion.p><br />
+          >Web Technology : HTML, CSS, JavaScript, TailwindCSS, ReactJs, TypeScript, NodeJs, Express, NextJs</motion.p><br />
           <motion.p className='text-white text-[12px] lg:text-sm font-montserrat'
             initial={{ opacity: 0, y: 40 }}
             animate={{ opacity: 100, y: 0 }}
@@ -172,7 +172,7 @@ function LandingPage() {
             initial={{ opacity: 0, y: 40 }}
             animate={{ opacity: 100, y: 0 }}
             transition={{ delay: 2.6, duration: 1 }}
-          >Tools : Git, Github, Figma, Docker</motion.p><br />
+          >Tools : Git, Github, Figma, Docker, Prisma</motion.p><br />
           <motion.p className='text-white text-[12px] lg:text-sm font-montserrat'
             initial={{ opacity: 0, y: 40 }}
             animate={{ opacity: 100, y: 0 }}
