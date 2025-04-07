@@ -35,7 +35,7 @@ function LandingPage() {
   }
 
   const handleDownload = () => {
-    FileSaver.saveAs('./files/SUDIPTO_RESUME.pdf', "SUDIPTO_RESUME.pdf");
+    FileSaver.saveAs('./CV_SUDIPTO_DAS.pdf', "CV_SUDIPTO_DAS.pdf");
   }
 
   return (
