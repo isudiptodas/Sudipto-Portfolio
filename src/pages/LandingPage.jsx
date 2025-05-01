@@ -2,19 +2,14 @@ import React, { useState, useEffect } from 'react'
 import { motion } from "motion/react";
 import stars from '../assets/stars.jpg';
 import profile from '../assets/profile.jpg';
-import learnfinity from '../assets/learnfinity.jpg';
-import downtown from '../assets/downtown.jpg';
-import shield from '../assets/shield.jpg';
-import learnfinity2 from '../assets/learnfinity.png';
-import downtown2 from '../assets/downtown.png';
-import shield2 from '../assets/shield.png';
 import { FaDownload } from "react-icons/fa";
 import { FaLinkedin } from "react-icons/fa";
 import { FaGithub } from "react-icons/fa";
 import { SiGmail } from "react-icons/si";
 import { PiMicrosoftOutlookLogoFill } from "react-icons/pi";
-import { FaExternalLinkAlt } from "react-icons/fa";
 import FileSaver, { saveAs } from 'file-saver';
+import ProjectBox from '../components/ProjectBox';
+import { projectDetails } from '../data/projectDetails';
 
 function LandingPage() {
 
@@ -25,10 +20,6 @@ function LandingPage() {
       setIsVisible(true);
     }, 2500);
   }, []);
-
-  const openLink = (link) => {
-    window.open(link, '_blank');
-  }
 
   const openMail = (mail) => {
     window.open(`mailto:${mail}`, '_blank');
@@ -72,13 +63,13 @@ function LandingPage() {
               >DAS</motion.h1>
             </div>
 
-            <div className='w-full h-56 sm:h-60 lg:h-80 z-20 flex justify-center items-center'>
+            <div className='w-full h-56 sm:h-60 lg:h-[400px] z-20 flex justify-center items-center'>
               <motion.div className='w-1/2 h-full overflow-hidden bg-black rounded-xl'
                 initial={{ opacity: 0, y: 40 }}
                 animate={{ opacity: 100, y: 0 }}
                 transition={{ delay: 0.8, duration: 1 }}
               >
-                <img src={profile} className='h-full w-full object-cover grayscale hover:grayscale-0 duration-300 ease-in-out' />
+                <img src={profile} className='h-full w-full object-cover lg:object-top grayscale hover:grayscale-0 duration-300 ease-in-out' />
               </motion.div>
             </div>
 
@@ -158,22 +149,22 @@ function LandingPage() {
         >Tech Stack</motion.h1>
 
         <div className='w-[80%] md:w-[60%] lg:w-[50%] rounded-xl h-auto px-5 backdrop-blur-3xl bg-white/25 py-5 flex flex-col z-20 justify-center items-start md:items-center'>
-          <motion.p className='text-white text-[12px] lg:text-sm font-montserrat'
+          <motion.p className='text-white text-[12px] text-start lg:text-center lg:text-sm font-montserrat'
             initial={{ opacity: 0, y: 40 }}
             animate={{ opacity: 100, y: 0 }}
             transition={{ delay: 2.6, duration: 1 }}
           >Web Technology : HTML, CSS, JavaScript, TailwindCSS, ReactJs, TypeScript, NodeJs, Express, NextJs</motion.p><br />
-          <motion.p className='text-white text-[12px] lg:text-sm font-montserrat'
+          <motion.p className='text-white text-[12px] text-start lg:text-center lg:text-sm font-montserrat'
             initial={{ opacity: 0, y: 40 }}
             animate={{ opacity: 100, y: 0 }}
             transition={{ delay: 2.6, duration: 1 }}
           >Languages : C++, Java</motion.p><br />
-          <motion.p className='text-white text-[12px] lg:text-sm font-montserrat'
+          <motion.p className='text-white text-[12px] text-start lg:text-center lg:text-sm font-montserrat'
             initial={{ opacity: 0, y: 40 }}
             animate={{ opacity: 100, y: 0 }}
             transition={{ delay: 2.6, duration: 1 }}
           >Tools : Git, Github, Figma, Docker, Prisma</motion.p><br />
-          <motion.p className='text-white text-[12px] lg:text-sm font-montserrat'
+          <motion.p className='text-white text-[12px] text-start lg:text-center lg:text-sm font-montserrat'
             initial={{ opacity: 0, y: 40 }}
             animate={{ opacity: 100, y: 0 }}
             transition={{ delay: 2.6, duration: 1 }}
@@ -186,60 +177,16 @@ function LandingPage() {
         <img src={stars} className='absolute opacity-70 z-10 lg:hidden w-full h-full object-cover' />
 
         <motion.h1 className='text-white relative z-20 mb-3 font-monterey text-4xl sm:text-5xl md:text-6xl'
-        initial={{opacity:0, y:40}}
-        animate={{opacity:100, y:0}}
-        transition={{delay: 2.8, duration: 1}}
+          initial={{ opacity: 0, y: 40 }}
+          animate={{ opacity: 100, y: 0 }}
+          transition={{ delay: 2.8, duration: 1 }}
         >Projects</motion.h1>
 
-        <div className='w-full lg:w-[70%] lg:mb-5 h-56 rounded-xl bg-zinc-900 z-20 flex overflow-hidden'>
-          <div className='w-1/2 h-full flex overflow-hidden flex-col justify-start items-start px-3 lg:px-7 py-4'>
-            <div className='w-full h-auto flex justify-start items-center gap-2'>
-              <span className='text-white text-sm lg:text-lg backdrop-blur-3xl bg-white/25 px-6 lg:px-10 py-2 rounded-full cursor-pointer' onClick={() => openLink('https://github.com/isudiptodas/Learnfinity')}><FaGithub /></span>
-              <span className='text-white text-sm lg:text-lg backdrop-blur-3xl bg-white/25 px-6 lg:px-10 py-2 rounded-full cursor-pointer' onClick={() => openLink('https://learnfinity-1.onrender.com')}><FaExternalLinkAlt /></span>
-            </div>
-
-            <p className='text-white font-montserrat text-lg font-bold mt-3 mb-3'>Learnfinity</p>
-            <p className='text-[10px] font-montserrat text-white'>This website is made for users focusing in tech, offering a wide range of resources and tools like : collaborative IDE, web playground, AI studio, note saver, community feature etc</p>
-          </div>
-
-          <div className='w-1/2 h-full overflow-hidden'>
-            <img src={learnfinity} className='w-full h-full object-cover lg:hidden' />
-            <img src={learnfinity2} className='w-full h-full object-cover hidden lg:block' />
-          </div>
-        </div>
-
-        <div className='w-full lg:w-[70%] lg:mb-5 h-56 rounded-xl bg-zinc-900 z-20 flex overflow-hidden'>
-          <div className='w-1/2 h-full flex overflow-hidden flex-col justify-start items-start px-3 lg:px-7 py-4'>
-            <div className='w-full h-auto flex justify-start items-center gap-2'>
-              <span className='text-white text-sm lg:text-lg backdrop-blur-3xl bg-white/25 px-6 lg:px-10 py-2 rounded-full cursor-pointer' onClick={() => openLink('https://github.com/isudiptodas/Downtown-io')}><FaGithub /></span>
-              <span className='text-white text-sm lg:text-lg backdrop-blur-3xl bg-white/25 px-6 lg:px-10 py-2 rounded-full cursor-pointer' onClick={() => openLink('https://downtown-io-its3.onrender.com')}><FaExternalLinkAlt /></span>
-            </div>
-
-            <p className='text-white font-montserrat text-lg font-bold mt-3 mb-3'>Downtown.io</p>
-            <p className='text-[10px] font-montserrat text-white'>This platform provides users to view nearby places and avail local services, in addition to this users can also check upcoming events, get a trip guide with AI.</p>
-          </div>
-
-          <div className='w-1/2 h-full overflow-hidden'>
-            <img src={downtown} className='w-full h-full object-cover lg:hidden' />
-            <img src={downtown2} className='w-full h-full object-cover hidden lg:block' />
-          </div>
-        </div>
-
-        <div className='w-full lg:w-[70%] lg:mb-5 h-56 rounded-xl bg-zinc-900 z-20 flex overflow-hidden'>
-          <div className='w-1/2 h-full flex overflow-hidden flex-col justify-start items-start px-3 lg:px-7 py-4'>
-            <div className='w-full h-auto flex justify-start items-center gap-2'>
-              <span className='text-white text-sm lg:text-lg backdrop-blur-3xl bg-white/25 px-6 lg:px-10 py-2 rounded-full cursor-pointer' onClick={() => openLink('https://github.com/isudiptodas/Shield')}><FaGithub /></span>
-              <span className='text-white text-sm lg:text-lg backdrop-blur-3xl bg-white/25 px-6 lg:px-10 py-2 rounded-full cursor-pointer' onClick={() => openLink('https://shield-1-w26n.onrender.com')}><FaExternalLinkAlt /></span>
-            </div>
-
-            <p className='text-white font-montserrat text-lg font-bold mt-3 mb-3'>Shield</p>
-            <p className='text-[10px] font-montserrat text-white'>Shield is focused on storing passwords on 256-bit protection and on top of that additional 3 layer security measures.</p>
-          </div>
-
-          <div className='w-1/2 h-full overflow-hidden'>
-            <img src={shield} className='w-full h-full object-cover lg:hidden' />
-            <img src={shield2} className='w-full h-full object-cover hidden lg:block' />
-          </div>
+        <div className='w-full h-auto px-3 py-5 grid grid-cols-1 md:grid-cols-2 justify-items-center gap-4'>
+          
+          {projectDetails.map((pro, index)=> {
+            return <ProjectBox key={index} name={pro.name} desc={pro.desc} image={pro.image} image2={pro.image2} githubLink={pro.githubLink} liveLink={pro.liveLink}/>
+          })}
         </div>
       </div>
 
