@@ -2,11 +2,13 @@ import learnfinity from '../assets/learnfinity.jpg';
 import downtown from '../assets/downtown.jpg';
 import evaluate from '../assets/evaluate.jpg';
 import shield from '../assets/shield.jpg';
+import companion from '../assets/companion.jpg';
 
 import learnfinity2 from '../assets/learnfinity.png';
 import downtown2 from '../assets/downtown.png';
 import evaluate2 from '../assets/evaluate.png';
 import shield2 from '../assets/shield.png';
+import companion2 from '../assets/companion.png';
 
 export const projectDetails = [
     {
@@ -45,5 +47,13 @@ export const projectDetails = [
         liveLink: `https://evaluate-ai-5peo.vercel.app/`,
         image: evaluate,
         image2: evaluate2
+    },
+    {
+        name: `Companion AI`,
+        desc: `AI voice agent platform for mood upliftment and hangouts`,
+        githubLink: `https://github.com/isudiptodas/Companion-AI`,
+        liveLink: `https://companion-ai-gray.vercel.app/`,
+        image: companion,
+        image2: companion2
     },
 ]
